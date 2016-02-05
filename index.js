@@ -5,12 +5,12 @@ var querystring = require('querystring');
 var url         = require('url');
 var util        = require('util');
 
-// Third party libraries 
+// Third party libraries
 var async;
 var request;
 var _;
 
-// Check that the required modules are installed. For teaching purposes only. Don't do this 
+// Check that the required modules are installed. For teaching purposes only. Don't do this
 // in proudction.
 try {
   request = require('request')
@@ -36,7 +36,7 @@ try {
 // HTML page we will serve up
 var htmlPage = fs.readFileSync('./index.html');
 
-// PORT to listen on 
+// PORT to listen on
 const PORT=8080;
 
 // This function is the core of our 'server'
@@ -81,7 +81,7 @@ function getJsonData(keywords, callback) {
 
   // documentation on async.parallel here: https://github.com/caolan/async#parallel
   // variable result will be an object with the scrapped data like so:
-  // { 
+  // {
   //   title: [title1, title2, ...],
   //   price: [price1, price2, ...],
   //   images: [url1, url2, ...]
@@ -165,7 +165,7 @@ function callAPI(url, callback) {
     }
     catch (e) {
       // json parsing failed
-      return callback(e); 
+      return callback(e);
     }
 
     var result = jsonBody.query.results;
